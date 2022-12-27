@@ -28,7 +28,7 @@ const run = async () => {
       res.send({ status: true, data: product });
     });
 
-    app.post("/product", async (req, res) => {
+    app.post("/products", async (req, res) => {
       const product = req.body;
 
       const result = await productCollection.insertOne(product);
@@ -36,7 +36,7 @@ const run = async () => {
       res.send(result);
     });
 
-    app.delete("/product/:id", async (req, res) => {
+    app.delete("/products/:id", async (req, res) => {
       const id = req.params.id;
 
       const result = await productCollection.deleteOne({ _id: ObjectId(id) });
@@ -49,7 +49,10 @@ const run = async () => {
 run().catch((err) => console.log(err));
 
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.send({status: true, data: {
+    message: "Hello from moon tech server",
+    author: "Muhammad Touhiduzzaman"
+  }});
 });
 
 app.listen(port, () => {

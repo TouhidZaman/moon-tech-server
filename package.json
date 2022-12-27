@@ -1,5 +1,10 @@
 {
   "name": "moon-tech-server",
+  "author": {
+    "name": "Muhammad Touhiduzzaman",
+    "email": "touhid4bd@gmail.com",
+    "url": "https://github.com/TouhidZaman"
+  },
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
